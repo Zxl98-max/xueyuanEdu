@@ -32,7 +32,7 @@
         <swagger.version>2.7.0</swagger.version>
         <version>3.8.0</version>
         <poi.version>3.9</poi.version>
-        <commons-fileupload.version>1.3.1</commons-fileupload.version>
+        <commons-fileupload.version>1.3.3</commons-fileupload.version>
     </properties>
 
     <dependencies>
