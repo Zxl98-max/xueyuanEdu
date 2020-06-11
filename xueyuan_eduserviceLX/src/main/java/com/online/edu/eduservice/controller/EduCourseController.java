@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.online.edu.commonLx.R;
 import com.online.edu.eduservice.entity.EduCourse;
 import com.online.edu.eduservice.entity.Query.QueruCourse;
+import com.online.edu.eduservice.entity.forn.CourseInfo;
 import com.online.edu.eduservice.entity.forn.CourseInfoFrom;
 import com.online.edu.eduservice.service.EduCourseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,6 +70,12 @@ public class EduCourseController {
             return R.error();
         }
 
+    }
+    //根据课程id查询课程详细信息
+    @GetMapping("getAllCourseInfo/{courseId}")
+    public R getAllCourseInfo(@PathVariable String courseId){
+        CourseInfo courseInfo = eduCourseService.getCourseInfoAll(courseId);
+        return R.ok().data("courseInfo",courseInfo);
     }
 
 

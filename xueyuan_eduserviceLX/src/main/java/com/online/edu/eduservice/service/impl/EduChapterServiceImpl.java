@@ -5,6 +5,7 @@ import com.online.edu.eduservice.entity.EduChapter;
 import com.online.edu.eduservice.entity.EduVideo;
 import com.online.edu.eduservice.entity.dto.EduVideoDto;
 import com.online.edu.eduservice.entity.dto.EduchapterDto;
+import com.online.edu.eduservice.handle.EduException;
 import com.online.edu.eduservice.mapper.EduChapterMapper;
 import com.online.edu.eduservice.service.EduChapterService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -83,5 +84,20 @@ public class EduChapterServiceImpl extends ServiceImpl<EduChapterMapper, EduChap
         }
         //返回集合
         return chapterDtoList;
+    }
+
+    //删除章节
+    @Override
+    public boolean removeChapterById(String chapterId) {
+        //判断小节是否有章节id
+        QueryWrapper<EduVideo>wrapper=new QueryWrapper<>();
+        wrapper.eq("chapter_id",chapterId);
+        int count = eduVideoService.count(wrapper);
+        if (count>0){
+            throw new EduException(20001,"删除失败，先删除小节");
+        }
+        int i = baseMapper.deleteById(chapterId);
+
+        return i>0;
     }
 }

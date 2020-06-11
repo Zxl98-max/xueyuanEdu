@@ -25,4 +25,13 @@ public class EduVideoServiceImpl extends ServiceImpl<EduVideoMapper, EduVideo> i
         wrapper.eq("course_id",id);
         baseMapper.delete(wrapper);
     }
+
+    //删除小节
+    @Override
+    public boolean removeVideoById(String videoId) {
+        //TODO 预留删除阿里云视频部分
+        int i = baseMapper.deleteById(videoId);
+
+        return i>0;
+    }
 }

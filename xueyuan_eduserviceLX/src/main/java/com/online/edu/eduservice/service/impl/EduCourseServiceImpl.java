@@ -7,6 +7,7 @@ import com.online.edu.eduservice.entity.EduCourse;
 import com.online.edu.eduservice.entity.EduCourseDescription;
 import com.online.edu.eduservice.entity.EduTeacher;
 import com.online.edu.eduservice.entity.Query.QueruCourse;
+import com.online.edu.eduservice.entity.forn.CourseInfo;
 import com.online.edu.eduservice.entity.forn.CourseInfoFrom;
 import com.online.edu.eduservice.handle.EduException;
 import com.online.edu.eduservice.mapper.EduCourseMapper;
@@ -158,6 +159,13 @@ public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse
         //4 删除课程本身
         int result = baseMapper.deleteById(id);
         return result>0;
+    }
+
+    //根据课程id查询详情信息
+    @Override
+    public CourseInfo getCourseInfoAll(String courseId) {
+        CourseInfo courseInfoAll = baseMapper.getCourseInfoAllform(courseId);
+        return courseInfoAll;
     }
 
 

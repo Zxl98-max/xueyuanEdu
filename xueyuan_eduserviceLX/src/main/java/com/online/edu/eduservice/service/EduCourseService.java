@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.online.edu.eduservice.entity.EduCourse;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.online.edu.eduservice.entity.Query.QueruCourse;
+import com.online.edu.eduservice.entity.forn.CourseInfo;
 import com.online.edu.eduservice.entity.forn.CourseInfoFrom;
 
 import java.util.List;
@@ -27,4 +28,7 @@ public interface EduCourseService extends IService<EduCourse> {
     void pageListCourse(Page<EduCourse> coursePage, QueruCourse queruCourse);
 
     boolean removeCourseId(String id);
+
+    //查询课程所有s信息
+    CourseInfo getCourseInfoAll(String courseId);
 }
