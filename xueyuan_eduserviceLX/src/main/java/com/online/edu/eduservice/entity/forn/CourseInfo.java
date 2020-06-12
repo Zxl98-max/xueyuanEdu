@@ -10,9 +10,9 @@ public class CourseInfo {
     private String cover;
     private String price;
     private String description;
-    private String teachername;
-    private String levelOne;
-    private String levelTwo;
+    private String teacherName;//讲师名称
+    private String levelOne;//一级分类名称
+    private String levelTwo;//二级分类名称
 
 
 }

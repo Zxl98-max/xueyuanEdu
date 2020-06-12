@@ -6,6 +6,8 @@
     <modules>
         <module>xueyuan_eduserviceLX</module>
         <module>xueyuan_commonLx</module>
+        <module>xueyuan_vidservice</module>
+        <module>xueyuan_eduvidservice</module>
     </modules>
 
 
@@ -116,6 +118,17 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
+
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+
     </build>
 
 </project>

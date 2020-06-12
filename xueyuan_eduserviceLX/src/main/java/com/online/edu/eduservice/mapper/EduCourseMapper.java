@@ -13,11 +13,11 @@ import org.apache.ibatis.annotations.Mapper;
  * @author testjava
  * @since 2020-06-07
  */
-@Mapper
+
 public interface EduCourseMapper extends BaseMapper<EduCourse> {
 
     //根据课程id查询课程详情信息
 
-    CourseInfo getCourseInfoAllform(String courseId);
+    CourseInfo getCourseInfoAll(String courseId);
 
 }

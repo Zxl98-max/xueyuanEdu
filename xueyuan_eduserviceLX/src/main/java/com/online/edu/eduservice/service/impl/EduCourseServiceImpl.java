@@ -164,7 +164,7 @@ public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse
     //根据课程id查询详情信息
     @Override
     public CourseInfo getCourseInfoAll(String courseId) {
-        CourseInfo courseInfoAll = baseMapper.getCourseInfoAllform(courseId);
+        CourseInfo courseInfoAll = baseMapper.getCourseInfoAll(courseId);
         return courseInfoAll;
     }
 

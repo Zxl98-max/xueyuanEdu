@@ -77,6 +77,20 @@ public class EduCourseController {
         CourseInfo courseInfo = eduCourseService.getCourseInfoAll(courseId);
         return R.ok().data("courseInfo",courseInfo);
     }
+    //修改课程
+    @PostMapping("publishCourseInfo/{courseId}")
+    public R publishCourseInfo(@PathVariable String courseId){
+        EduCourse eduCourse=new EduCourse();
+        eduCourse.setId(courseId);
+        eduCourse.setStatus("Normal");
+        boolean b = eduCourseService.updateById(eduCourse);
+        if (b){
+            return R.ok();
+        }else{
+            return R.error();
+        }
+
+    }
 
 
 
