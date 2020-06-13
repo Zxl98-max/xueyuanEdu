@@ -6,8 +6,7 @@
     <modules>
         <module>xueyuan_eduserviceLX</module>
         <module>xueyuan_commonLx</module>
-        <module>xueyuan_vidservice</module>
-        <module>xueyuan_eduvidservice</module>
+        <module>xueyuan_onvidservice</module>
     </modules>
 
 
